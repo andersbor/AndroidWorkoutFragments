@@ -1,7 +1,6 @@
 package com.anbo.workoutfragments;
 
-import android.app.Activity;
-
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
@@ -10,21 +9,21 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-
 /**
- * Head First, page 292
+ * Head First, 2nd, page 387
  */
 public class WorkoutListFragment extends ListFragment {
 
-    static interface WorkoutListListener {
+    static interface Listener {
         void itemClicked(long id);
     }
 
-    private WorkoutListListener listener;
+    private Listener listener;
 
+    /*
     public WorkoutListFragment() {
         // Required empty public constructor
-    }
+    }*/
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,10 +38,11 @@ public class WorkoutListFragment extends ListFragment {
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 
+    // Head First, 2nd, page 387
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        this.listener = (WorkoutListListener) activity;
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        this.listener = (Listener) context;
     }
 
     @Override

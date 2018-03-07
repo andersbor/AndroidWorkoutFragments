@@ -6,21 +6,15 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity implements WorkoutListFragment.WorkoutListListener {
+public class MainActivity extends AppCompatActivity implements WorkoutListFragment.Listener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        // Head first 2nd, chapter 9
-//        FragmentManager fragmentManager = getFragmentManager();
-//        WorkoutDetailFragment frag =
-//                (WorkoutDetailFragment) fragmentManager.findFragmentById(R.id.detail_frag);
-//        frag.setWorkoutId(1);
     }
 
-    // Head First chapter 10
+    // Head First, 2nd, page 423
     @Override
     public void itemClicked(long id) {
         View fragmentContainer = findViewById(R.id.frament_container);
